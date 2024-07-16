@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sec9tor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #1a1a1a;
+      }
+      .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+      }
+      nav a, nav button {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      nav a:hover, nav button:hover {
+        text-decoration: underline;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .search-bar input[type="text"] {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #555;
+        color: #fff;
+      }
+      .search-bar button {
+        margin-left: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #555;
+        color: #fff;
+        cursor: pointer;
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+      }
+      .container h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .image-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .image-row img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+      .product-section {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0;
+      }
+      .product-card {
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+      }
+      .product-card .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+      }
+      .product-card .image-container img {
+        width: 105px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 15px auto;
+      }
+      .product-card p {
+        margin: 10px 0 0;
+        font-size: 16px;
+      }
+      .image-container2 img {
+        width: 90px;
+        height: 30px;
+        display: block;
+        margin: 50px auto;
+      }
+      .image-container3 img {
+        width: 125px;
+        height: 75px;
+        display: block;
+        margin: 15px auto;
+      }
+      .image-container4 img {
+        width: 100px;
+        height: 80px;
+        display: block;
+        margin: 10px auto;
+      }
+    </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="shop.html">Shop</a>
+    </div>
+    <div class="nav-right">
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Sec9tor</h1>
+    <div class="image-row">
+      <img src="image1.png" alt="Shoe 1">
+      <img src="image2.png" alt="Shoe 2">
+      <img src="image3.png" alt="Shoe 3">
+      <img src="image4.png" alt="Shoe 4">
+      <img src="image5.png" alt="Shoe 5">
+      <img src="image6.png" alt="Shoe 6">
+      <img src="image7.png" alt="Shoe 7">
+      <img src="image8.png" alt="Shoe 8">
+      <img src="image9.png" alt="Shoe 9">
+      <img src="image10.png" alt="Shoe 10">
+    </div>
+    <div class="product-section">
+      <div class="product-card">
+        <div class="image-container">
+          <img src="image25.webp" alt="Product 1-1">
+          <img src="image26.webp" alt="Product 1-2">
+          <img src="image27.webp" alt="Product 1-3">
+        </div>
+        <p>Shop Hats</p>
+      </div>
+      <div class="product-card">
+        <div class="image-container2">
+          <img src="image28.webp" alt="Product 2-1">
+          <img src="image29.webp" alt="Product 2-2">
+          <img src="image30.webp" alt="Product 2-3">
+        </div>
+        <p>Shop Eyewear</p>
+      </div>
+      <div class="product-card">
+        <div class="image-container3">
+          <img src="image31.webp" alt="Product 3-1">
+          <img src="image32.webp" alt="Product 3-2">
+          <img src="image33.webp" alt="Product 3-3">
+        </div>
+        <p>Shop Tops</p>
+      </div>
+      <div class="product-card">
+        <div class="image-container4">
+          <img src="image34.webp" alt="Product 4-1">
+          <img src="image35.webp" alt="Product 4-2">
+          <img src="image36.webp" alt="Product 4-3">
+        </div>
+        <p>Shop Bottoms</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

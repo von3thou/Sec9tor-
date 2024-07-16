@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            position: relative;
+        }
+        nav a, nav button {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .account-dropdown {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+        }
+        .account-dropdown input[type="text"], .account-dropdown input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #2a2a2a;
+            color: #fff;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background: #2a2a2a;
+            color: #fff;
+            margin-right: 10px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .section {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            background-color: #1a1a1a;
+            padding: 40px;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .section.the-heat {
+            background-color: #2a2a2a;
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .section-title {
+            grid-column: span 6;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 10;
+        }
+        .popup img {
+            width: 300px;
+            height: auto;
+        }
+        .popup-content {
+            text-align: center;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a1a1a;
+        }
+        nav .nav-left,
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        nav .nav-left button,
+        nav .nav-right button {
+            color: #fff;
+            background: none;
+            border: none;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .account-dropdown {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            top: 50px;
+        }
+        .account-dropdown input {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-row img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        .product-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .product-card .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+        .product-card .image-container img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .product-card p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <button id="accountToggle">Account</button>
+            <div class="account-dropdown" id="accountDropdown">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Login</button>
+            </div>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="home.html">Home</a>
+        </div>
+        <div class="nav-center">
+            <button></button>
+        </div>
+        <div class="nav-right">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="title">Shop</div>
+        <div class="section" id="newDrops">
+            <div class="section-title">New drops</div>
+            <div class="shoe-container">
+                <img src="image1.webp" alt="Shoe 1" class="shoe">
+                <div class="caption">Korn x Campus 2 'Follow The Leader'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image2.webp" alt="Shoe 2" class="shoe">
+                <div class="caption">Jordan 11 Low 'Space Jam'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image3.webp" alt="Shoe 3" class="shoe">
+                <div class="caption">Travis Scott x Jordan 1 Low 'Canary'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image4.webp" alt="Shoe 4" class="shoe">
+                <div class="caption">Cactus Plant Flea Market x Air Force 1 Low Premium 'Black'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image5.webp" alt="Shoe 5" class="shoe">
+                <div class="caption">Zoom Kobe 4 Protro 'Girl Dad'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image6.webp" alt="Shoe 6" class="shoe">
+                <div class="caption">Cactus Plant Flea Market x Air Force 1 Low Premium 'White' 2024</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image7.webp" alt="Shoe 7" class="shoe">
+                <div class="caption">P-6000 'Metallic Silver'
+                </div>
+            </div>
+            <div class="shoe-container">
+                <img src="image8.webp" alt="Shoe 8" class="shoe">
+                <div class="caption">Harden Vol.8 'After Hours'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image9.webp" alt="Shoe 9" class="shoe">
+                <div class="caption">Air Jordan 4 Retro 'Military Blue' 2024</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image10.webp" alt="Shoe 10" class="shoe">
+                <div class="caption">Wmns Air Zoom Vomero 5 'Metallic Gold'
+                </div>
+            </div>
+            <div class="shoe-container">
+                <img src="image11.webp" alt="Shoe 11" class="shoe">
+                <div class="caption">Travis Scott x Air Jordan 1 Retro Low OG SP PS 'Black Phantom'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image12.webp" alt="Shoe 12" class="shoe">
+                <div class="caption">Handball Spezial 'Navy Gum'</div>
+            </div>
+        </div>
+        <div class="section the-heat" id="theHeat">
+            <div class="section-title">Trending</div>
+            <div class="shoe-container">
+                <img src="image13.webp" alt="Shoe 13" class="shoe">
+                <div class="caption">Travis Scott x Air Jordan 1 Low OG PS 'Reverse Mocha'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image14.webp" alt="Shoe 14" class="shoe">
+                <div class="caption">Maison Mihara Yasuhiro Peterson OG Sole Canvas Low 'Black'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image15.webp" alt="Shoe 15" class="shoe">
+                <div class="caption">Air Jordan 6 Retro 'Aqua'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image16.webp" alt="Shoe 16" class="shoe">
+                <div class="caption">Zoom Kobe 4 Protro 'Mambacita'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image17.webp" alt="Shoe 17" class="shoe">
+                <div class="caption">Dior x Air Jordan 1 High</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image18.webp" alt="Shoe 18" class="shoe">
+                <div class="caption">Air Jordan 11 Retro 'Gratitude / Defining Moments'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image19.webp" alt="Shoe 19" class="shoe">
+                <div class="caption">Sp5der Wait Web Hoodie 'Slate Grey'
+                </div>
+            </div>
+            <div class="shoe-container">
+                <img src="image20.webp" alt="Shoe 20" class="shoe">
+                <div class="caption">Stussy Test Strike Pigment Dyed Long-Sleeve Tee 'Black'</div>
+            </div>
+            <div class="shoe-container">
+                <img src="image21.webp" alt="Shoe 21" class="shoe">
+                <div class="caption">Hellstar Sports Future Flame Hoodie 'Black'</div>
+            </div>
+            <div class="shoe-container">
+              <img src="image22.webp" alt="Shoe 22" class="shoe">
+              <div class="caption">KidSuper Stripe Blurry Face Shirt 'White/Blue'</div>
+          </div>
+          <div class="shoe-container">
+            <img src="image23.webp" alt="Shoe 23" class="shoe">
+            <div class="caption">Fear of God Essentials Essentials Hoodie 'Iron'
+            </div>
+        </div>
+        <div class="shoe-container">
+          <img src="image24.webp" alt="Shoe 24" class="shoe">
+          <div class="caption">BAPE Silicon Logo Tee 'Black'</div>
+      </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <button class="popup-close" onclick="closePopup()">X</button>
+        <div class="popup-content">
+            <img id="popupImage" src="" alt="Shoe">
+            <div id="popupCaption" class="caption"></div>
+        </div>
+    </div>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchToggle = document.querySelector('.search-container button');
+        const accountToggle = document.getElementById('accountToggle');
+        const accountDropdown = document.getElementById('accountDropdown');
+        const popup = document.getElementById('popup');
+        const popupImage = document.getElementById('popupImage');
+        const popupCaption = document.getElementById('popupCaption');
+
+        accountToggle.addEventListener('click', () => {
+            accountDropdown.style.display = accountDropdown.style.display === 'none' || accountDropdown.style.display === '' ? 'flex' : 'none';
+        });
+
+        function searchShoes() {
+            const input = searchInput.value.toLowerCase();
+            const shoes = document.querySelectorAll('.shoe-container');
+
+            let found = false;
+            shoes.forEach(container => {
+                const shoe = container.querySelector('.shoe');
+                const caption = container.querySelector('.caption').textContent.toLowerCase();
+                if (caption.includes(input)) {
+                    popupImage.src = shoe.src;
+                    popupCaption.textContent = container.querySelector('.caption').textContent;
+                    popup.style.display = 'block';
+                    found = true;
+                } else {
+                    container.style.display = 'none';
+                }
+            });
+            if (!found) {
+                alert("Shoe not found");
+            }
+        }
+
+        function closePopup() {
+            popup.style.display = 'none';
+            const shoes = document.querySelectorAll('.shoe-container');
+            shoes.forEach(container => {
+                container.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
